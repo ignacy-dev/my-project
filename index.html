@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ignacy</title>
+    <title>Site</title>
     <style>
         * {
             box-sizing: border-box;
@@ -88,15 +88,15 @@
 
     <div class="card">
         <div class="avatar">I</div>
-        <h1>Cześć, jestem Ignacy</h1>
+        <h1>Hi, I'm Ignacy</h1>
         <p class="subtitle">IT Student @ Warsaw University of Technology</p>
         
-        <p>Witaj na mojej pierwszej stronie</p>
+        <p>Press for a surprise</p>
 
-        <button class="btn" id="clickBtn">niespodzianka</button>
+        <button class="btn" id="clickBtn">surprise button</button>
 
         <div class="counter-box">
-            licznik: <span id="counter">0</span>
+            counter: <span id="counter">0</span>
         </div>
     </div>
 
@@ -107,7 +107,17 @@
 
         btn.addEventListener('click', () => {
             count++;
-            counterSpan.textContent = count;
+
+            if (count === 25) {
+                counterSpan.textContent = '🎁';
+                count = 0;
+
+                setTimeout(() => {
+                    counterSpan.textContent = count;
+                }, 1000);
+            } else {
+                counterSpan.textContent = count;
+            }
         });
     </script>
 </body>
